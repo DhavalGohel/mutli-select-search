@@ -1,3 +1,4 @@
+
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
 ## How to use this template
@@ -24,3 +25,27 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+# mutli-select-search
+This is ionic app for multi select search dropdown
+
+To Used this below  in home.html
+
+```bash
+<ion-item no-padding class="custom-select-search">
+  <div tappable class="select select-md custom-select">
+    <div class="select-text"
+      tappable
+      multiSelect
+      ngDefaultControl
+      [(ngModel)]="mSelectedId"  
+      [(data)]="mDDData"
+      [(dataIndex)]="mSelectedId" style="float:left">
+      Select Item
+    </div>
+
+    <div class="select-icon" style="float:right">
+      <div class="select-icon-inner"></div>
+    </div>
+  </div>
+</ion-item>
+```
