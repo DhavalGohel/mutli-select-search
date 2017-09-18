@@ -6,24 +6,21 @@ import { NavController ,Events} from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  test: any = [12,13,15,18,19];
-  mClientTypeDD: any = [
-    {key: "12",value:"sasdlkasd"},
-    {key: "13",value:"headlkasd"},
-    {key: "14",value:"ahesdsaadlkasd"},
-    {key: "15",value:"rwsheadlkasd"},
-    {key: "16",value:"q4wheadlkasd"},
-    {key: "17",value:"czc xcheadlkasd"},
-    {key: "18",value:"a11e headlkasd"},
-    {key: "19",value:"d7ghd headlkasd"}
-  ];
+  mSelectedId: any = [1,2,3,4,14];
+  mDDData: any = [];
 
   constructor(public navCtrl: NavController,
   public eventsCtrl: Events) {
     this.eventsCtrl.subscribe("search-select:refresh_value", (data) => {
-      console.log(data);
-      this.test = data.data;
+      this.mSelectedId = data.data;
     });
+    this.setDDdata();
+  }
+
+  setDDdata(){
+    for(let i = 1; i<15; i++){
+      this.mDDData.push({"key":i,"value":"Option Select" +i})
+    }
   }
 
 }
