@@ -7,8 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-item no-padding class="custom-select-search">
+    <div tappable class="select select-md custom-select">
+      <div class="select-text"
+        tappable
+        multiSelect
+        ngDefaultControl
+        [(ngModel)]="test"
+        [(data)]="mClientTypeDD"
+        [(dataIndex)]="test" style="float:left">
+        Select Item
+      </div>
+
+      <div class="select-icon" style="float:right">
+        <div class="select-icon-inner"></div>
+      </div>
+    </div>
+  </ion-item>
 </ion-content>

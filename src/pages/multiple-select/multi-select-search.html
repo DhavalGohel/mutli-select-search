@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Select Option
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-header>
+  <ion-toolbar color="primary" no-padding class="custom-toolbar">
+    <ion-buttons left class="left-buttons">
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      {{title}}
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button clear icon-left (click)="clearData()">
+        CLEAR
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar *ngIf="showSearchTextBox" (ionInput)="onSearchItems($event)" placeholder="Search"></ion-searchbar>
+  <div text-center *ngIf="showNoTextMsg">
+    <p class="txt-bold txt-dark_gray">No data available.</p>
+  </div>
+
+  <ion-list *ngIf="options != null && options.length > 0">
+    <ion-item *ngFor="let option of options; let i = index">
+      <ion-label>{{option.value}}</ion-label>
+      <ion-checkbox dark [(ngModel)]="options[i].isCheked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <button full ion-button (click)="onSelectItem()" *ngIf="showOKButton"> Ok </button>
+</ion-content>

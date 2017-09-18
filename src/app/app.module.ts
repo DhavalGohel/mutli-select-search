@@ -6,11 +6,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ModalMultiSelectSearch ,MultiSelect} from '../pages/multiple-select/multi-select-search'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ModalMultiSelectSearch,
+    MultiSelect,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ModalMultiSelectSearch
   ],
   providers: [
     StatusBar,
