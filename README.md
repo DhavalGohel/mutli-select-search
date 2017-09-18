@@ -49,3 +49,28 @@ To Used this below  in home.html
   </div>
 </ion-item>
 ```
+
+In home.ts
+
+```bash
+mSelectedId: any = [1,2,3,4,14];
+mDDData: any = [];
+
+this.eventsCtrl.subscribe("search-select:refresh_value", (data) => {
+  this.mSelectedId = data.data;
+});
+this.setDDdata();
+
+setDDdata(){
+  for(let i = 1; i<15; i++){
+    this.mDDData.push({"key":i,"value":"Option Select" +i})
+  }
+}
+
+```
+
+## Then main important copy
+
+https://github.com/DhavalGohel/mutli-select-search/tree/master/src/pages/multiple-select
+
+your ionic src folder
